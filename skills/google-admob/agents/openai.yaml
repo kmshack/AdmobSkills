@@ -1,0 +1,4 @@
+interface:
+  display_name: "Google AdMob"
+  short_description: "Connect AdMob reporting and mobile SDKs"
+  default_prompt: "Use $google-admob to connect my AdMob account and check which reporting data is available."

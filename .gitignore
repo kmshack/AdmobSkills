@@ -1,0 +1,15 @@
+# Local credentials and account data
+.env
+.env.*
+client-secret*.json
+client_secret*.json
+client_secrets*.json
+credentials.json
+authorized-user*.json
+token.json
+output/
+
+# Local Python artifacts
+.venv/
+__pycache__/
+*.py[cod]
