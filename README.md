@@ -11,7 +11,32 @@ A portable [Agent Skill](https://agentskills.io/specification) for connecting to
 
 ## Install the skill
 
-Clone the repository, then copy the entire `skills/google-admob/` folder to the skill directory for your client. Copy it from the clone into your **target project** if you want project-level installation.
+From the project where you plan to use the skill, run this command in your terminal. You need Node.js 22.20 or later with npm. [Download Node.js](https://nodejs.org/)
+
+```sh
+npx skills add kmshack/AdmobSkills
+```
+
+When prompted, select your agents and choose **Project** for the current project or **Global** for your user account across projects. The installer may automatically select a detected agent. In the interactive agent picker, Codex and other agents that share the `.agents/skills` directory may be preselected. Use `-a` to specify the installation targets directly. [Skills CLI options](https://github.com/vercel-labs/skills/blob/main/docs/commands.md#skills-add)
+
+### Install with explicit options
+
+```sh
+# Codex in the current project
+npx skills add kmshack/AdmobSkills --skill google-admob -a codex -y
+
+# Claude Code globally
+npx skills add kmshack/AdmobSkills --skill google-admob -a claude-code -g -y
+
+# Both agents globally
+npx skills add kmshack/AdmobSkills --skill google-admob -a codex -a claude-code -g -y
+```
+
+`-y` skips the prompts. With `-y`, omitting `-g` installs to the current project.
+
+### Manual installation
+
+Clone the repository, then copy the entire `skills/google-admob/` folder to the skill directory for your client. Project paths are relative to the target project.
 
 ```sh
 git clone https://github.com/kmshack/AdmobSkills.git

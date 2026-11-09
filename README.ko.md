@@ -11,7 +11,32 @@ Codex, Claude Code와 기타 호환 에이전트에서 Google AdMob을 연동할
 
 ## 설치
 
-저장소를 클론한 뒤 `skills/google-admob/` 폴더 전체를 사용하는 에이전트의 스킬 경로로 복사합니다. 프로젝트별로 설치하려면 대상 프로젝트 안의 경로를 사용합니다.
+스킬을 사용할 프로젝트 디렉터리에서 터미널을 열고 아래 명령을 실행합니다. npm이 포함된 Node.js 22.20 이상이 필요합니다. [Node.js 다운로드](https://nodejs.org/)
+
+```sh
+npx skills add kmshack/AdmobSkills
+```
+
+설치 화면이 표시되면 사용할 에이전트를 선택하고, 현재 프로젝트에만 설치하려면 **Project**, 사용자 계정의 모든 프로젝트에서 쓰려면 **Global**을 고릅니다. 설치 도구가 감지한 에이전트를 자동으로 선택하거나, 선택 화면에서 Codex처럼 `.agents/skills` 경로를 공유하는 에이전트를 기본으로 포함할 수 있습니다. 설치 대상을 직접 지정하려면 `-a`를 사용하세요. [Skills CLI 옵션](https://github.com/vercel-labs/skills/blob/main/docs/commands.md#skills-add)
+
+### 옵션으로 설치 대상과 범위 지정
+
+```sh
+# 현재 프로젝트에 Codex용으로 설치
+npx skills add kmshack/AdmobSkills --skill google-admob -a codex -y
+
+# Claude Code에 글로벌 설치
+npx skills add kmshack/AdmobSkills --skill google-admob -a claude-code -g -y
+
+# Codex와 Claude Code 모두에 글로벌 설치
+npx skills add kmshack/AdmobSkills --skill google-admob -a codex -a claude-code -g -y
+```
+
+`-y`는 설치 질문을 건너뜁니다. `-y`를 사용하면서 `-g`를 생략하면 현재 프로젝트에 설치됩니다.
+
+### 수동 설치
+
+저장소를 클론한 뒤 `skills/google-admob/` 폴더 전체를 사용하는 에이전트의 스킬 경로로 복사합니다. 프로젝트 경로는 스킬을 사용할 프로젝트를 기준으로 합니다.
 
 ```sh
 git clone https://github.com/kmshack/AdmobSkills.git
